@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>Application Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+          <h1 class="text-center">Application Form <small>Get Your Dream Job</small><h1>
+          <h3>Please enter your choices below to apply for a position with Ubermelon</h3>
+        </div>
+
+        <form action="/application-success" method="POST">
+
+        <div class="col-xs-6 col-md-4">
+          First Name: <input type="text" name="first_name">
+          <br>
+          Last Name: <input type="text" name="last_name" id=last_name>
+          <br>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          Salary Requirement: <input type="number" name="salary">
+          <br>
+        </div>  
+        <div class="col-xs-6 col-md-4">
+          Job you are applying for:
+              <select name="job">
+                {% for job in current_jobs: %}
+                  <option value="{{ job }}">{{ job|upper }}</option>
+                {% endfor %}
+              </select>
+        <br><br>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <input type="submit" value="Submit Application">
+        </div>
+        </form>
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+  </div>
+</body>
+</html>

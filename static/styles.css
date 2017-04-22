@@ -1,1 +1,24 @@
-/* Your styles can go here. */
+/* CSS for Ubermelon Jobs website */
+
+h3 {
+    border: 3px solid black;
+}
+
+input {
+    background-color: yellow;
+}
+
+input[type=number]{
+    width: 75px;
+}
+
+input[type=text]{
+    width: 200px;
+}
+select {
+    background-color: yellow;
+}
+
+#last_name {
+    font-weight: bold;
+}*/

@@ -11,8 +11,27 @@ app.jinja_env.auto_reload = True
 app.secret_key = "ABC"
 
 
-# YOUR ROUTES GO HERE
+@app.route("/")
+def index():
+    """Home page"""
 
+    html = "index.html"
+    return render_template(html)
+
+
+@app.route("/application-form")
+def form():
+    """Application form page"""
+
+    current_jobs = ["software engineer", "qa engineer", "product manager"]
+
+    html = "application-form.html"
+    return render_template(html, current_jobs=current_jobs)
+
+
+@app.route("/application-success")
+def success():
+    pass
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
