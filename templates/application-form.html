@@ -1,17 +1,11 @@
-<!doctype html>
-<html>
-<head>
-    <title>Application Form</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/css/styles.css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Application Form{% endblock %}
+{% block content %}
   <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 col-md-offset-3">
-          <h1 class="text-center">Application Form <small>Get Your Dream Job</small><h1>
-          <h3>Please enter your choices below to apply for a position with Ubermelon</h3>
+          <h1 class="text-center">Application Form<br><small>Get Your Melon Dream Job Here</small><h1>
+          <h3>Please enter your information below to apply for a position</h3>
         </div>
 
         <form action="/application-success" method="POST">
@@ -27,7 +21,7 @@
           <br>
         </div>  
         <div class="col-xs-6 col-md-4">
-          Job you are applying for:
+          Job for which you are applying:
               <select name="position">
                 {% for job in current_jobs: %}
                   <option value="{{ job }}">{{ job|upper }}</option>
@@ -42,7 +36,4 @@
 
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </div>
-  </div>
-</body>
-</html>
+{% endblock %}

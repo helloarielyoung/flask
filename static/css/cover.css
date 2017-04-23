@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  background-image: url("/static/img/background.jpg");
+  background-image: url("/static/images/background.jpg");
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -124,7 +124,7 @@ div.inner.cover img {
   font-weight: bold;
 }
 
-input[type=text]{
+input{
   color:black;
   font-weight: normal;
   padding-left: 0.5em;
