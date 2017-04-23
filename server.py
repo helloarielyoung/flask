@@ -23,15 +23,26 @@ def index():
 def form():
     """Application form page"""
 
-    current_jobs = ["software engineer", "qa engineer", "product manager"]
+    current_jobs = ["software engineer", "quality assurance engineer", "product manager"]
 
     html = "application-form.html"
     return render_template(html, current_jobs=current_jobs)
 
 
-@app.route("/application-success")
+@app.route("/application-success", methods=["POST"])
 def success():
-    pass
+    """Responds to successful submission of application"""
+
+    name = request.form.get("first_name") + " " + request.form.get("last_name")
+    position = str.title(str(request.form.get("position")))
+    salary = request.form.get("salary")
+
+    html = "application-response.html"
+
+    return render_template(html,
+                           name=name,
+                           position=position,
+                           salary=salary)
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
