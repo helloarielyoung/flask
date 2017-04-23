@@ -41,6 +41,11 @@ body {
   box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 
+a {
+  font-style: underline;
+  font-weight: bold;
+}
+
 div.inner.cover img {
     width: 150px;
 }
@@ -126,6 +131,12 @@ div.inner.cover img {
 
 input{
   color:black;
+  font-weight: normal;
+  padding-left: 0.5em;
+}
+
+select{
+    color:black;
   font-weight: normal;
   padding-left: 0.5em;
 }
